@@ -6,8 +6,10 @@ from commands.restore import restore
 from commands.daemon import daemon
 
 @click.group()
-def cli():
-    pass
+@click.option('--basedir', default='/var/www', help='Defines the base directory of your websites.')
+@click.pass_context
+def cli(ctx, basedir):
+    ctx.obj['BASEDIR'] = basedir
 
 if __name__ == '__main__':
     cli.add_command(create)
@@ -15,4 +17,4 @@ if __name__ == '__main__':
     cli.add_command(backup)
     cli.add_command(restore)
     cli.add_command(daemon)
-    cli()
+    cli(obj={})

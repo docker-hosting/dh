@@ -1,5 +1,4 @@
 ## Docker hosting CLI
-If you installed *docker hosting* as [described above](#installation) there's a `dh` command to administrate your websites.
 
 ### dh create
 With `dh create` you can create a new website.
